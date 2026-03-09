@@ -1,0 +1,82 @@
+{
+  "name": "nuxt-cactus-theme",
+  "type": "module",
+  "version": "1.0.0",
+  "private": false,
+  "description": "An opinionated Nuxt 3 blog theme with dark mode, Pagefind search, RSS feed, and Tailwind CSS v4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs-pt/nuxt-cactus-theme.git"
+  },
+  "license": "MIT",
+  "main": "./nuxt.config.ts",
+  "files": [
+    "app",
+    "app.config.ts",
+    "assets",
+    "components",
+    "composables",
+    "content.config.ts",
+    "data",
+    "layouts",
+    "nuxt.config.ts",
+    "pages",
+    "public",
+    "server",
+    "tailwind.config.ts",
+    "types.ts",
+    "utils"
+  ],
+  "scripts": {
+    "dev": "nuxt dev playground",
+    "build": "nuxt generate playground",
+    "postbuild": "pagefind --site playground/.output/public",
+    "preview": "npx serve playground/.output/public",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "format": "prettier -w . --cache",
+    "postinstall": "nuxt prepare playground"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.11.2",
+    "@nuxtjs/color-mode": "^3.5.1",
+    "@nuxtjs/robots": "^5.7.0",
+    "@nuxtjs/sitemap": "^7.6.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/vite": "^4.2.0",
+    "feed": "^5.2.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.15.0",
+    "vue": "^3.5.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild",
+      "@parcel/watcher",
+      "unrs-resolver"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@nuxt/devtools": "^1.6.0",
+    "@nuxt/eslint": "^1.15.1",
+    "@pagefind/default-ui": "^1.4.0",
+    "@types/eslint__js": "^8.42.3",
+    "better-sqlite3": "^12.6.2",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "nuxt": "^3.15.0",
+    "pagefind": "^1.4.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.7.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.20.0",
+    "vue": "^3.5.28",
+    "vue-router": "^4.6.4",
+    "vue-tsc": "^2.1.8",
+    "zod": "^3.23.8"
+  }
+}

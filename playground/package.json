@@ -1,0 +1,11 @@
+{
+  "name": "nuxt-cactus-theme-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "postbuild": "pagefind --site .output/public",
+    "preview": "npx serve .output/public"
+  }
+}
