@@ -29,6 +29,12 @@ export interface SiteMeta {
 	title: string;
 }
 
+export interface Project {
+	name: string;
+	url: string;
+	desc: string;
+}
+
 export type AdmonitionType = "tip" | "note" | "important" | "caution" | "warning";
 
 /** Webmentions */
@@ -82,5 +88,6 @@ declare module "nuxt/schema" {
 	interface AppConfigInput {
 		siteConfig?: Partial<SiteConfig>;
 		menuLinks?: MenuLink[];
+		projects?: Project[];
 	}
 }

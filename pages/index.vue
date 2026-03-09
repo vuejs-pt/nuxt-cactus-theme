@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { sortByDate, filterDrafts } from "../data/post";
-
-const { siteConfig } = useAppConfig();
+const { siteConfig, projects } = useAppConfig();
 
 useSEO({
 	title: "Home",
@@ -62,6 +61,14 @@ const latestNotes = computed(() => sortByDate(allNotes.value || []).slice(0, MAX
 			>
 				<BlogPostPreview :post="p" />
 			</li>
+		</ul>
+	</section>
+	<section v-if="projects.length > 0" class="mt-16">
+		<h2 class="title text-accent mb-6 text-xl">
+			<NuxtLink to="/projects/">Projects</NuxtLink>
+		</h2>
+		<ul class="space-y-2" role="list">
+			<ProjectCard v-for="project in projects" :key="project.name" :project="project" />
 		</ul>
 	</section>
 	<section v-if="latestNotes.length > 0" class="mt-16">

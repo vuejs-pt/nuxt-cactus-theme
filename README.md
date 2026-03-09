@@ -9,16 +9,17 @@ A simple, opinionated blog theme built as a [Nuxt Layer](https://nuxt.com/docs/g
    - [As a Nuxt Layer (recommended)](#as-a-nuxt-layer-recommended)
    - [As a Starter Template](#as-a-starter-template)
 3. [Configuration](#configuration)
-4. [Adding Posts, Notes, and Tags](#adding-posts-notes-and-tags)
+4. [Projects List](#projects-list)
+5. [Adding Posts, Notes, and Tags](#adding-posts-notes-and-tags)
    - [Post Frontmatter](#post-frontmatter)
    - [Note Frontmatter](#note-frontmatter)
    - [Tag Frontmatter](#tag-frontmatter)
-5. [Content Schema](#content-schema)
-6. [Pagefind Search](#pagefind-search)
-7. [RSS Feed](#rss-feed)
-8. [Deploy](#deploy)
-9. [Development](#development)
-10. [Acknowledgment](#acknowledgment)
+6. [Content Schema](#content-schema)
+7. [Pagefind Search](#pagefind-search)
+8. [RSS Feed](#rss-feed)
+9. [Deploy](#deploy)
+10. [Development](#development)
+11. [Acknowledgment](#acknowledgment)
 
 ## Key Features
 
@@ -80,6 +81,7 @@ export default defineAppConfig({
     { path: "/", title: "Home" },
     { path: "/about/", title: "About" },
     { path: "/posts/", title: "Blog" },
+    { path: "/projects/", title: "Projects" },
     { path: "/notes/", title: "Notes" },
   ],
 });
@@ -115,6 +117,33 @@ All site configuration lives in `app.config.ts` and is fully overridable by the 
 | `siteConfig.date.locale` | Date formatting locale |
 | `siteConfig.date.options` | `Intl.DateTimeFormat` options |
 | `menuLinks` | Array of `{ path, title }` for header/footer navigation |
+| `projects` | Array of `{ name, url, desc }` for the projects list |
+
+## Projects List
+
+Add a `projects` array to your `app.config.ts` to show a list of projects on the home page and the `/projects/` page.
+
+```typescript
+export default defineAppConfig({
+  projects: [
+    {
+      name: "My Project",
+      url: "https://github.com/you/my-project",
+      desc: "A short description of the project",
+    },
+  ],
+});
+```
+
+Each project has three fields:
+
+| Field | Description |
+| :---- | :---------- |
+| `name` | Project name (rendered as a link) |
+| `url` | URL to the project (e.g., GitHub repo) |
+| `desc` | Short description shown after the name |
+
+The theme defaults to an empty array. When no projects are configured, the projects section on the home page is hidden.
 
 ## Adding Posts, Notes, and Tags
 
@@ -207,7 +236,7 @@ nuxt-cactus-theme/
 ├── components/             # Vue components
 ├── composables/            # Vue composables (SEO, theme, search)
 ├── content.config.ts       # Content collection schemas
-├── data/                   # Data helpers (post utilities)
+├── data/                   # Data files and helpers (posts, projects)
 ├── layouts/                # Default layout
 ├── nuxt.config.ts          # Layer Nuxt config
 ├── pages/                  # File-based routes

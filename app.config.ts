@@ -19,8 +19,10 @@ export default defineAppConfig({
 		{ path: "/", title: "Home" },
 		{ path: "/about/", title: "About" },
 		{ path: "/posts/", title: "Blog" },
+		{ path: "/projects/", title: "Projects" },
 		{ path: "/notes/", title: "Notes" },
 	],
+	projects: [] as { name: string; url: string; desc: string }[],
 	codeConfig: {
 		borderRadius: "4px",
 		codeFontFamily:
