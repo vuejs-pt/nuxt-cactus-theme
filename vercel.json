@@ -1,0 +1,5 @@
+{
+  "installCommand": "pnpm install",
+  "buildCommand": "nuxt build playground && pagefind --site playground/.vercel/output/static && mkdir -p .vercel && cp -r playground/.vercel/output .vercel/",
+  "framework": null
+}

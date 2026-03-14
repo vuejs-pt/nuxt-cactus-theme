@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt generate",
+    "build": "nuxt build",
     "postbuild": "pagefind --site .output/public",
     "preview": "npx serve .output/public"
   }

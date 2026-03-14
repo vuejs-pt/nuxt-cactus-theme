@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "dev": "nuxt dev playground",
-    "build": "nuxt generate playground",
+    "build": "nuxt build playground",
     "postbuild": "pagefind --site playground/.output/public",
     "preview": "npx serve playground/.output/public",
     "typecheck": "nuxt typecheck",
