@@ -1,5 +1,7 @@
 # Nuxt Cactus Theme
 
+[Live Demo](https://nuxt-cactus-theme.vercel.app/)
+
 A simple, opinionated blog theme built as a [Nuxt Layer](https://nuxt.com/docs/guide/going-further/layers). Install it in your own Nuxt project or clone the repo and use the playground as a starter.
 
 ## Table Of Contents
